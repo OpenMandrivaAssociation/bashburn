@@ -1,5 +1,5 @@
 %define name bashburn
-%define version 2.0
+%define version 2.1
 %define release %mkrel 1
 
 Summary: BashBurn is a bash script designed to make CD burning
@@ -11,7 +11,7 @@ License: GPL
 Group: Archiving/Cd burning
 Url: http://bashburn.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires: cdrecord, eject, cdrdao, mpg123, vorbis-tools, flac
+Requires: cdrkit, eject, cdrdao, mpg123, vorbis-tools, flac
 Buildarch: noarch
 
 %description
@@ -47,5 +47,3 @@ pushd $RPM_BUILD_ROOT/etc && %__sed -i "s|BBROOTDIR: .*|BBROOTDIR: /usr/share/ba
 %{_bindir}/*
 %attr(664,root,cdwriter) %config(noreplace) /etc/bashburnrc
 %{_datadir}/*
-
-
