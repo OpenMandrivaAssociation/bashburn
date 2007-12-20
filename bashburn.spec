@@ -10,6 +10,7 @@ Source: BashBurn-%{version}.tar.bz2
 License: GPL
 Group: Archiving/Cd burning
 Url: http://bashburn.sourceforge.net/
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: cdrkit, eject, cdrdao, mpg123, vorbis-tools, flac
 Buildarch: noarch
 
