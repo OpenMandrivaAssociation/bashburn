@@ -1,5 +1,5 @@
 %define name bashburn
-%define version 2.1
+%define version 2.1.2
 %define release %mkrel 1
 
 Summary: BashBurn is a bash script designed to make CD burning
