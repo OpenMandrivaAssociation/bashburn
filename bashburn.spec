@@ -1,6 +1,6 @@
 %define name bashburn
 %define version 2.1.2
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Bash script designed to make CD burning
 Name: %{name}
