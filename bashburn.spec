@@ -2,7 +2,7 @@
 %define version 2.1.2
 %define release %mkrel 1
 
-Summary: BashBurn is a bash script designed to make CD burning
+Summary: Bash script designed to make CD burning
 Name: %{name}
 Version: %{version}
 Release: %{release}
