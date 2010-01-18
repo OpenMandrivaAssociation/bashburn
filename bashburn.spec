@@ -7,7 +7,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source: BashBurn-%{version}.tar.gz
-License: GPL
+License: GPLv2+
 Group: Archiving/Cd burning
 Url: http://bashburn.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
