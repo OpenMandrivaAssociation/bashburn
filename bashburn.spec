@@ -1,11 +1,11 @@
 Summary:	Bash script designed to make CD burning
 Name:		bashburn
 Version:	3.0.1
-Release:	%mkrel 2
+Release:	%mkrel 3
 Source:		%name-%{version}.tar.gz
 License:	GPLv2+
 Group:		Archiving/Cd burning
-Url:		http://bashburn.sourceforge.net/
+Url:		http://bashburn.dose.se/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	cdrkit, eject, cdrdao, mpg123, vorbis-tools, flac
 Buildarch:	noarch
