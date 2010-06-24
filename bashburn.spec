@@ -1,7 +1,7 @@
 Summary:	Bash script designed to make CD burning
 Name:		bashburn
 Version:	3.0.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 Source:		%name-%{version}.tar.gz
 License:	GPLv2+
 Group:		Archiving/Cd burning
@@ -29,16 +29,6 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 ./Install.sh --prefix=%buildroot%_prefix
-%if 0
-install -m 755 -D BashBurn.sh $RPM_BUILD_ROOT%{_bindir}/BashBurn.sh
-pushd $RPM_BUILD_ROOT%{_bindir} && %__ln_s BashBurn.sh bashburn && popd
-for i in burning/* config/* convert/* lang/English/* menus/* misc/*; do
-	install -m 755 -D $i $RPM_BUILD_ROOT%{_datadir}/%{name}/$i
-done
-install -m 644 -D bashburnrc $RPM_BUILD_ROOT/etc/bashburnrc
-pushd $RPM_BUILD_ROOT/etc && %__sed -i "s|BBROOTDIR: .*|BBROOTDIR: /usr/share/bashburn|" bashburnrc && popd
-rm -rf Install.sh
-%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
