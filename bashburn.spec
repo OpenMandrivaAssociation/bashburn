@@ -1,7 +1,9 @@
+%define bblib %{buildroot}%{_prefix}
+
 Summary:	Bash script designed to make CD burning
 Name:		bashburn
 Version:	3.0.1
-Release:	%mkrel 4
+Release:	%mkrel 5
 Source:		%name-%{version}.tar.gz
 License:	GPLv2+
 Group:		Archiving/Cd burning
@@ -28,15 +30,18 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-./Install.sh --prefix=%buildroot%_prefix
+#mkdir -p %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)/usr
+mkdir -p %{bblib}
+find . -print | cpio -pdum $RPM_BUILD_ROOT/usr/
+sed -e "s^@@BBROOTDIR@@^%{bblib}^" %{bblib}/BashBurn.sh > newbb-$$.sh
+mv newbb-$$.sh %{bblib}/BashBurn.sh
+chmod 755 %{bblib}/BashBurn.sh
+mkdir %{buildroot}%{_bindir} 
+ln -sf %{bblib}/BashBurn.sh %{buildroot}%{_bindir}/bashburn
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-%doc docs/*
-%{_bindir}/*
-%{_prefix}/lib/Bashburn
-#attr(664,root,cdwriter) %config(noreplace) /etc/bashburnrc
-%{_datadir}/*
+%defattr(-,root,root,-)
+%{_prefix}/*
