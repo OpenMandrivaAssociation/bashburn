@@ -1,3 +1,5 @@
+%define	oname	BashBurn
+
 Name:		bashburn
 Version:	3.1.0
 Release:	%mkrel 1
@@ -21,7 +23,7 @@ do. (And if not then probably didn't want to do it anyway)
 Bashburn could need lame codec for some operations.
 
 %prep
-%setup -q
+%setup -q -n %{oname}-%{version}
 
 %build
 make
