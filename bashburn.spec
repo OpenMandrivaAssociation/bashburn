@@ -1,18 +1,14 @@
-%define name bashburn
-%define version 3.0.1
-%define release %mkrel 6
-
-Summary: Bash script designed to make CD burning
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source: %{name}-%{version}.tar.gz
-License: GPL
-Group: Archiving/Cd burning
-Url: http://bashburn.sourceforge.net/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires: cdrkit, eject, cdrdao, mpg123, vorbis-tools, flac
-Buildarch: noarch
+Name:		bashburn
+Version:	3.1.0
+Release:	%mkrel 1
+Summary:	Bash script designed to make CD burning
+Source:		%{name}-%{version}.tar.gz
+License:	GPLv2
+Group:		Archiving/Cd burning
+Url:		http://bashburn.sourceforge.net/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Requires:	cdrkit, eject, cdrdao, mpg123, vorbis-tools, flac
+Buildarch:	noarch
 
 %description
 Sick of all those fancy CD-burning apps not working for you? You need something
@@ -32,7 +28,7 @@ make
 
 %install
 rm -rf %{buildroot}
-./Install.sh --prefix=%buildroot%_prefix
+./Install.sh --prefix=%{buildroot}%{_prefix}
 
 # correct the symlink
 ln -sf /usr/lib/Bashburn/lib/BashBurn.sh %{buildroot}%{_bindir}/bashburn
