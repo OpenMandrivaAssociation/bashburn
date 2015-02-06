@@ -2,7 +2,7 @@
 
 Name:		bashburn
 Version:	3.1.0
-Release:	%mkrel 1
+Release:	2
 Summary:	Bash script designed to make CD burning
 Source:		%{name}-%{version}.tar.gz
 License:	GPLv2
