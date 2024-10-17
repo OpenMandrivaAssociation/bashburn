@@ -7,7 +7,7 @@ Summary:	Bash script designed to make CD burning
 Source:		%{name}-%{version}.tar.gz
 License:	GPLv2
 Group:		Archiving/Cd burning
-Url:		http://bashburn.sourceforge.net/
+Url:		https://bashburn.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	cdrkit, eject, cdrdao, mpg123, vorbis-tools, flac
 Buildarch:	noarch
