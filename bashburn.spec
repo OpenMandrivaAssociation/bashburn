@@ -12,6 +12,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	cdrkit, eject, cdrdao, mpg123, vorbis-tools, flac
 Buildarch:	noarch
 
+BuildRequires:	make
 %description
 Sick of all those fancy CD-burning apps not working for you? You need something
 that just gets the work done? Welcome to BashBurn - It just works!
